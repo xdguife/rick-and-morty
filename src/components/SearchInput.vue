@@ -52,6 +52,7 @@ input {
   box-sizing: border-box;
   background-color: #303a39;
   color: #a1a1a1;
+  z-index: 10;
 }
 
 input:focus {

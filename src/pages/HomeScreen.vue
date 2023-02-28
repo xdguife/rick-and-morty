@@ -14,6 +14,7 @@
           placeholder="Search Character Name"
         />
       </div>
+      <div class="fade"></div>
     </section>
 
     <!-- Section 2: List result characters -->
@@ -46,7 +47,7 @@
       <span> {{ currentPage }} of {{ characters.info?.pages }} </span>
       <button
         class="pagination-btn"
-        v-if="currentPage < 4"
+        v-if="currentPage < `${parseInt(characters.info?.pages)}`"
         @click="() => nextPage()"
       >
         Next >
@@ -116,6 +117,7 @@ export default defineComponent({
       // wait time to call API while typing
       searchTimeout = setTimeout(() => {
         try {
+          this.currentPage = 1;
           this.getCharacters();
         } catch (error) {
           console.error(error);
@@ -183,7 +185,7 @@ export default defineComponent({
   background-position: center;
   height: 55vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: column;
 }
@@ -201,6 +203,20 @@ export default defineComponent({
   align-items: flex-end;
   width: 50vh;
   margin-bottom: 0px;
+}
+
+.fade {
+  /* style to help organize the layout of the characters */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  background-image: linear-gradient(transparent, #000000);
+  z-index: 9;
+  align-items: center;
+  justify-content: center;
 }
 
 /* list characters section */

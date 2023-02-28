@@ -50,6 +50,10 @@ export default defineComponent({
   margin-top: -30px;
 }
 
+.container-character > .character-info {
+  transition: margin-top 0.1s linear;
+}
+
 .character-info {
   display: flex;
   flex-direction: column;
