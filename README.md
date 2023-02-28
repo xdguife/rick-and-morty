@@ -2,6 +2,11 @@
 
 Rick and Morty Characters
 
+## Demo link to preview
+```bash
+https://xdguife.github.io/rick-and-morty/dist/spa/#/
+```
+
 ## Install the dependencies
 ```bash
 yarn
